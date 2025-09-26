@@ -63,13 +63,14 @@ hullless <- dplyr::filter(winterOatDesign, category=="Hull-less")
 table(hullless$block)
 
 
-# Make it a planting plan
+# Make it a planting plan  # this is getting realllyyy convoluted over the years try and clean it up before next use. 
+#Look at what the output is and figure out a better way to get here.  
 
 winterOatPea_2026_2 <- winterOatDesign %>% 
-  mutate("paired_2" = if_else(paired==0,"single","pair")) %>% 
-  mutate(pairNo = seq(1:nrow(winterOatDesign))) %>% 
-  mutate(pairs = if_else(paired==0,1,2)) %>% 
-  group_by(pairNo)    ## added in some columns identifying pairs and number of pairs
+  mutate("paired_2" = if_else(paired==0,"single","pair")) %>% #identify paired plots or unpaired plots based on assignment in plan (0=unpaired, 1= paired)
+  mutate(pairNo = seq(1:nrow(winterOatDesign))) %>% # create a sequence of pair designations
+  mutate(pairs = if_else(paired==0,1,2)) %>% # identify how many plots are in each pair, either 1 or 2
+  group_by(pairNo)
 
 df <- winterOatPea_2026_2 %>% 
   expand(count = seq(1:pairs)) ## create a dataframe doubling the pairs = 2  
@@ -83,18 +84,18 @@ winterOatPea_2026 <- winterOatPea_2026_2 %>%
 winterOatPea_2026_3 <-  winterOatPea_2026 %>% 
   mutate("SN" = seq(1:nrow(winterOatPea_2026))) %>% 
   group_by(SN) %>% 
-  mutate("random" = runif(1)) %>% 
+  mutate("random" = runif(1)) %>% # randomly assign a number for each plot
   ungroup() %>% 
   mutate("intercrop" = if_else(count==1,"intercrop","monocrop")) %>% 
-  arrange(pairNo,random) %>%
-  mutate("plotNo" = seq(1:nrow(winterOatPea_2026))) %>%  ## add the plot numbers 
-  select(plotNo,pairNo,nPlots,block,accession_name,intercrop,category,seedlot_name,) %>% 
+  arrange(pairNo,random) %>%  # arrange within a pair if the intercrop plot is first or second using the random number.
+  mutate("plotNo" = seq(1:nrow(winterOatPea_2026))) %>%  ## add the plot numbers, sequentially, the mono-inter was randomize in the previous line 
+  select(plotNo,pairNo,nPlots,block,accession_name,intercrop,category,seedlot_name) %>% 
   
+  # the rest is just getting meta data disignation and formating it better for t3 trial upload 
   mutate(accession_name=dplyr::if_else(accession_name == "BLAZE_mono", "NO_OAT_PLANTED", accession_name)) %>% 
   mutate(accession_name=dplyr::if_else(accession_name == "BLAZE_biomass", "NO_OAT_PLANTED", accession_name)) %>% 
   
   mutate(crop=dplyr::if_else(grepl("NO_OAT_PLANTED", accession_name), "Pea", "Oat")) %>% 
-
 
   mutate(intercrop = if_else(crop=="Pea","monocrop",intercrop)) %>%
   mutate("crop_2" = if_else(crop=="Oat" & intercrop == "monocrop","oat",
@@ -121,8 +122,8 @@ winterOatPea_2026_3 %>%
   write.csv(here::here("data","WOP_2026_entry.csv"))
 
 
-winterOatPea_2026_4 <- winterOatPea_2026_3 %>% 
-  left_join(read.csv(here::here("data","WOP_2026_entry.csv")), join_by(accession_name))
+##winterOatPea_2026_4 <- winterOatPea_2026_3 %>% 
+  ##left_join(read.csv(here::here("data","WOP_2026_entry.csv")), join_by(accession_name))
 
 
   
