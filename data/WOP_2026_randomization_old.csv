@@ -29,7 +29,7 @@
 28,28,14,4,Block1,NC14-1965,monocrop,SOAP_selection,NC14-1965-CU_2025_Ithaca_SOAP_HR-bulk,Oat,oat,NA,38,38
 29,29,15,4,Block1,FL17556-1,monocrop,UWON,FL17556-1_2026_UWON_Entry_14,Oat,oat,NA,8,8
 30,30,15,4,Block1,FL17556-1,intercrop,UWON,FL17556-1_2026_UWON_Entry_14,Oat,oat-pea,BLAZE,8,8
-31,31,16,4,Block1,NC21-6492,intercrop,Biomass,NC21-6492-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_128,Oat,oat-pea,BLAZE,54,54
+31,31,16,4,Block1,NC21-6492,intercrop,Biomass,NC21-6492-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_128,Oat,oat-pea,NO_PEA_PLANTED,54,54
 32,32,17,4,Block1,OZARK|POGI,intercrop,WOP_Mirza_selection,OZARK|POGI-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_204,Oat,oat-pea,BLAZE,75,75
 33,33,17,4,Block1,OZARK|POGI,monocrop,WOP_Mirza_selection,OZARK|POGI-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_204,Oat,oat,NA,75,75
 34,34,18,4,Block1,NF13-4214-4_5,intercrop,WOP_Mirza_selection,NF13-4214-4_5-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_169,Oat,oat-pea,BLAZE,70,70
@@ -188,7 +188,7 @@
 187,187,98,4,Block4,SCLA18073SSB-36-1,monocrop,UWON,SCLA18073SSB-36-1_2026_UWON_Entry_26,Oat,oat,NA,83,83
 188,188,99,4,Block4,TX18OCS9125,monocrop,WOP_Mirza_selection,TX18OCS9125-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_10,Oat,oat,NA,89,89
 189,189,99,4,Block4,TX18OCS9125,intercrop,WOP_Mirza_selection,TX18OCS9125-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_10,Oat,oat-pea,BLAZE,89,89
-190,190,100,4,Block4,PA7617-3658,intercrop,Biomass,PA7617-3658-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_54,Oat,oat-pea,BLAZE,77,77
+190,190,100,4,Block4,PA7617-3658,intercrop,Biomass,PA7617-3658-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_54,Oat,oat-pea,NO_PEA_PLANTED,77,77
 191,191,101,4,Block4,NC21-6429,monocrop,WOP_Mirza_selection,NC21-6429-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_16,Oat,oat,NA,52,52
 192,192,101,4,Block4,NC21-6429,intercrop,WOP_Mirza_selection,NC21-6429-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_16,Oat,oat-pea,BLAZE,52,52
 193,193,102,4,Block4,NORA,intercrop,WOP_Mirza_selection,NORA-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_133,Oat,oat-pea,BLAZE,73,73
@@ -203,7 +203,7 @@
 202,202,107,4,Block4,NC20-4402,intercrop,WOP_Mirza_selection,NC20-4402-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_142,Oat,oat-pea,BLAZE,44,44
 203,203,108,4,Block4,LA17129SBSS-8-1,intercrop,WOP_Mirza_selection,LA17129SBSS-8-1-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_165,Oat,oat-pea,BLAZE,20,20
 204,204,108,4,Block4,LA17129SBSS-8-1,monocrop,WOP_Mirza_selection,LA17129SBSS-8-1-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_165,Oat,oat,NA,20,20
-205,205,109,4,Block5,OZARK|POGI,intercrop,Biomass,OZARK|POGI-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_204,Oat,oat-pea,BLAZE,75,75
+205,205,109,4,Block5,OZARK|POGI,intercrop,Biomass,OZARK|POGI-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_204,Oat,oat-pea,NO_PEA_PLANTED,75,75
 206,206,110,4,Block5,SCLA17080SBS-4-2,monocrop,WOP_Mirza_selection,SCLA17080SBS-4-2-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_316,Oat,oat,NA,80,80
 207,207,110,4,Block5,SCLA17080SBS-4-2,intercrop,WOP_Mirza_selection,SCLA17080SBS-4-2-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_316,Oat,oat-pea,BLAZE,80,80
 208,208,111,4,Block5,NC21-6492,intercrop,Biomass,NC21-6492-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_128,Oat,oat-pea,BLAZE,54,54
@@ -296,7 +296,7 @@
 295,295,158,4,Block6,SCLA18059SSB-33-2,monocrop,UWON,SCLA18059SSB-33-2_2026_UWON_Entry_25,Oat,oat,NA,82,82
 296,296,158,4,Block6,SCLA18059SSB-33-2,intercrop,UWON,SCLA18059SSB-33-2_2026_UWON_Entry_25,Oat,oat-pea,BLAZE,82,82
 297,297,159,8,Block6,NO_OAT_PLANTED,monocrop,Monocrop_pea,BLAZE-Cornell_WinterOatPeaIntercrop_2024_Ithaca-bulk,Pea,pea,BLAZE,NA,NA
-298,298,160,4,Block6,NF12AS-73-4_3,intercrop,Biomass,NF12AS-73-4_3-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_242,Oat,oat-pea,BLAZE,64,64
+298,298,160,4,Block6,NF12AS-73-4_3,intercrop,Biomass,NF12AS-73-4_3-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_242,Oat,oat-pea,NO_PEA_PLANTED,64,64
 299,299,161,4,Block6,OZARK|POGI,intercrop,WOP_Mirza_selection,OZARK|POGI-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_204,Oat,oat-pea,BLAZE,75,75
 300,300,161,4,Block6,OZARK|POGI,monocrop,WOP_Mirza_selection,OZARK|POGI-Cornell_WinterOatPeaIntercrop_2024_Ithaca-PLOT_204,Oat,oat,NA,75,75
 301,301,162,2,Block6,LA99017,intercrop,SOAP_selection,LA99017-CU_2025_Ithaca_SOAP_HR-bulk,Oat,oat-pea,BLAZE,28,28

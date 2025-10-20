@@ -13,7 +13,7 @@ accession_plan <- read_excel(here::here("data","WOP_2026_planning.xlsx"),
 # Format dataframe 
 
 planning <- accession_plan %>% 
-       select(accession_name,nReps,nPlots,category,paired,seedlot_name) 
+  select(accession_name,intercrop_accession_name,nReps,nPlots,category,paired,seedlot_name) 
 
 
 print(planning,n=nrow(planning))
@@ -86,12 +86,16 @@ winterOatPea_2026_3 <-  winterOatPea_2026 %>%
   group_by(SN) %>% 
   mutate("random" = runif(1)) %>% # randomly assign a number for each plot
   ungroup() %>% 
+  
   mutate("intercrop" = if_else(count==1,"intercrop","monocrop")) %>% 
+  mutate(intercrop = if_else(intercrop_accession_name=="NO_PEA_PLANTED","monocrop",intercrop)) %>% #sorting out biomass experiment
+  mutate(intercrop = if_else(accession_name=="BLAZE_biomass","monocrop",intercrop)) %>%   #sorting out biomass experiment
+  
   arrange(pairNo,random) %>%  # arrange within a pair if the intercrop plot is first or second using the random number.
   mutate("plotNo" = seq(1:nrow(winterOatPea_2026))) %>%  ## add the plot numbers, sequentially, the mono-inter was randomize in the previous line 
   select(plotNo,pairNo,nPlots,block,accession_name,intercrop,category,seedlot_name) %>% 
   
-  # the rest is just getting meta data disignation and formating it better for t3 trial upload 
+  # the rest is just getting meta data designation and formatting it better for t3 trial upload 
   mutate(accession_name=dplyr::if_else(accession_name == "BLAZE_mono", "NO_OAT_PLANTED", accession_name)) %>% 
   mutate(accession_name=dplyr::if_else(accession_name == "BLAZE_biomass", "NO_OAT_PLANTED", accession_name)) %>% 
   
@@ -105,7 +109,9 @@ winterOatPea_2026_3 <-  winterOatPea_2026 %>%
   
   mutate(intercrop_accession_name = if_else(crop_2 == "oat-pea", "BLAZE", NA)) %>% 
   mutate(intercrop_accession_name = if_else(accession_name == "NO_OAT_PLANTED", "BLAZE", intercrop_accession_name)) %>% 
-  mutate(intercrop_accession_name = if_else(intercrop_accession_name == "BLAZE" & category == "Keystone_Pea_Test", "KEYSTONE", intercrop_accession_name))
+  mutate(intercrop_accession_name = if_else(intercrop_accession_name == "BLAZE" & category == "Keystone_Pea_Test", "KEYSTONE", intercrop_accession_name)) %>% 
+  
+  mutate(intercrop_accession_name = if_else(is.na(intercrop_accession_name), "NO_PEA_PLANTED",intercrop_accession_name))
 
 
 #### create entry number, should have done this first, very useful for seed packing to have an easy reference not the accession name
@@ -119,11 +125,11 @@ winterOatPea_2026_3 %>%
   filter(accession_name != "NO_OAT_PLANTED") %>% 
   mutate(entry = seq(1:93)) %>% 
   select(accession_name,entry) %>% 
-  write.csv(here::here("data","WOP_2026_entry.csv"))
+  write.csv(here::here("data","WOP_2026_entry_demo.csv"))
 
 
-##winterOatPea_2026_4 <- winterOatPea_2026_3 %>% 
-  ##left_join(read.csv(here::here("data","WOP_2026_entry.csv")), join_by(accession_name))
+winterOatPea_2026_4 <- winterOatPea_2026_3 %>% 
+  left_join(read.csv(here::here("data","WOP_2026_entry_demo.csv")), join_by(accession_name))
 
 
   
@@ -132,6 +138,6 @@ print(winterOatPea_2026_4, n= nrow(winterOatPea_2026_4))
 
 
 #  Save it
-# write.csv(winterOatPea_2026_4, here::here("data","WOP_2026_randomization.csv"))
+write.csv(winterOatPea_2026_4, here::here("data","WOP_2026_randomization_demo.csv"))
 
 

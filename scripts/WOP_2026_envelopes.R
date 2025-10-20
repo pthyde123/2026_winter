@@ -18,5 +18,5 @@ WOP_2026_randomization %>%
   mutate(source = str_c("entry ",entry)) %>% 
   arrange(-entry, -plotNo) %>% # reverse entry order for printer
   select(source,plotNo,oatName,peaName) 
-  #write.csv( "data/WOP_2026_envelopes.csv", row.names = F)
+  #write.csv( "data/WOP_2026_envelopes_demo.csv", row.names = F)
 
