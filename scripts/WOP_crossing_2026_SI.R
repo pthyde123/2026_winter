@@ -155,7 +155,7 @@ full_SI %>% arrange(-SI)
 
 plot(full_SI$grain_y_BLUPs,full_SI$pea_y_BLUPs)
 
-write.csv(full_SI,str_c("data/","WOP_2026_SI.csv"), row.names = FALSE)
+write.csv(full_SI,str_c("data/","WOP_2025_SI.csv"), row.names = FALSE)
 
 
 
