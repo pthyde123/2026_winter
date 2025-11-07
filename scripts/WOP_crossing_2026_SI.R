@@ -145,10 +145,11 @@ full_SI <- damage_BLUPs %>%
 
 
   
-full_SI %>%   arrange(-PrEfAsEf)
+full_SI %>% arrange(-PrEfAsEf)
 
-full_SI %>%   arrange(-SI_damage)
+full_SI %>% arrange(-SI_damage)
 
+full_SI %>% arrange(-SI)
 
 plot(full_SI$grain_y_BLUPs,full_SI$pea_y_BLUPs)
 
