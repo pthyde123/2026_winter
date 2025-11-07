@@ -141,7 +141,9 @@ full_SI <- damage_BLUPs %>%
   
   mutate(SI_pea_y = pea_y_BLUPs*EV_pea_y) %>% 
   
-  mutate(PrEfAsEf =  grain_y_BLUPs +  pea_y_BLUPs)
+  mutate(PrEfAsEf =  grain_y_BLUPs +  pea_y_BLUPs) %>% 
+  
+  arrange(-SI)
 
 
   
@@ -153,7 +155,7 @@ full_SI %>% arrange(-SI)
 
 plot(full_SI$grain_y_BLUPs,full_SI$pea_y_BLUPs)
 
-
+write.csv(full_SI,str_c("data/","WOP_2026_SI.csv"), row.names = FALSE)
 
 
 
