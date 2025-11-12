@@ -52,3 +52,28 @@ WOP_2026_PM3D_biomass_timepoints
 #write.csv(WOP_2026_PM3D_biomass_timepoints, "data/WOP_2026_PM3D_biomass_timepoints.csv",row.names = F)
 
 
+
+## create T3 list of subplot names for each time point
+## paste in T3 list, validate as subplot, and use with barcode designer as subplot to make sample bag labels with any t3 subplot data
+
+## T1
+WOP_2026_PM3D_biomass_timepoints %>% 
+  filter(biomass_timepoint == 1) %>% 
+  pull(subplot_name) %>%  
+  as.character() %>%            
+  writeClipboard()
+  
+
+## T2
+WOP_2026_PM3D_biomass_timepoints %>% 
+  filter(biomass_timepoint == 2) %>% 
+  pull(subplot_name) %>%  
+  as.character() %>%            
+  writeClipboard()
+
+## T3
+WOP_2026_PM3D_biomass_timepoints %>% 
+  filter(biomass_timepoint == 3) %>% 
+  pull(subplot_name) %>%  
+  as.character() %>%            
+  writeClipboard()
