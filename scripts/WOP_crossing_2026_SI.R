@@ -6,10 +6,13 @@ library(BrAPI)
 options(scipen = 999)
 
 ### Input files  phenotypes and genotypes 
-#T3 search wizard/trials/Cornell_WinterOatPeaIntercrop_2024_Ithaca,CU_2025_Ithaca_WOP_PLOT
+
+#T3 search wizard/trials/Cornell_WinterOatPeaIntercrop_2024_Ithaca,CU_2025_Ithaca_WOP_PLOT  ###write as BrAPI in future
 
 WOP_2024_2025_t3_phenotypes <- read_csv("data/WOP_2024_2025_t3_phenotypes.csv")
 GRM_long_format <- read_csv("data/GRM_long_format.csv")
+
+
 
 
 phenotypes <- WOP_2024_2025_t3_phenotypes %>% 
@@ -104,7 +107,9 @@ pea_y_BLUPs <- germplasmNameBLUPs
 pea_y_BLUPs
 
 
-### Estimate EV of freeze damage using T3 data available with freeze damage and yield   
+### Estimate EV of freeze damage using T3 data available with freeze damage and yield 
+### Use the search wizard to get trails with damage and yield
+
 
 UWOYT_damage_yield <- read_csv("data/UWOYT_damage_yield.csv") %>% 
   select(germplasmName,studyName,`Freeze damage severity - 0-9 Rating|CO_350:0005001`,`Grain yield - g/m2|CO_350:0000260`) %>% 

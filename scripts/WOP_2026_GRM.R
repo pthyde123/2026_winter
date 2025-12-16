@@ -103,7 +103,7 @@ rownames(GRM_matrix) <- grm$sample.id
 colnames(GRM_matrix) <- grm$sample.id
 
 # Save the GRM to CSV 
-write.csv(GRM_matrix, output_file, quote = FALSE)
+#write.csv(GRM_matrix, output_file, quote = FALSE)
 
 
 # Close GDS file
@@ -139,7 +139,7 @@ grm_long <- grm_df  %>%
 ## grm_long_unique <- grm_long[as.numeric(factor(grm_long$ID1)) <= as.numeric(factor(grm_long$ID2)), ]
 
 # Save to file
-write.csv(grm_long, "data/GRM_long_format.csv", row.names = FALSE, quote = FALSE)
+#write.csv(grm_long, "data/GRM_long_format.csv", row.names = FALSE, quote = FALSE)
 
 
 
